@@ -1,0 +1,12 @@
+p
+  strong
+    | Коментирует:
+  = comment.commenter
+p
+  strong
+    | Коментарий:
+  = comment.body
+p
+  = link_to 'Удалить коментарий', [comment.post, comment],
+  -               method: :delete,
+  -               data: { confirm: "Удалить?" }

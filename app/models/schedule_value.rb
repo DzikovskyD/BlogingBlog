@@ -1,0 +1,2 @@
+class ScheduleValue < ApplicationRecord
+end

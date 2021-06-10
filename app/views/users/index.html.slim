@@ -1,0 +1,35 @@
+p#notice
+  = notice
+h1
+  | Пользователи
+table
+  thead
+    tr
+      th
+        | Имя
+      th
+        | Почта
+      th
+        | Логин
+      th
+        | Подписка
+      th[colspan="4"]
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.name
+        td
+          = user.email
+        td
+          = user.login
+        td
+          = user.mailing_schedule
+        td
+          = link_to 'Показать', user
+        td
+          = link_to 'Редактировать', edit_user_path(user)
+        td
+          = link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' }
+br
+= link_to 'Новый пользователь', new_user_path

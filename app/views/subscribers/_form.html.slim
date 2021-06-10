@@ -1,0 +1,15 @@
+= form_with(model: subscriber) do |form|
+  - if subscriber.errors.any?
+    #error_explanation
+      h2
+        = pluralize(subscriber.errors.count, "error")
+        |  prohibited this subscriber from being saved:
+      ul
+        - subscriber.errors.each do |error|
+          li
+            = error.full_message
+  .field
+    = form.label :email
+    = form.text_field :email
+  .actions
+    = form.submit

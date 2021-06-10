@@ -1,0 +1,17 @@
+
+
+<p>
+  <strong>Коментирует:</strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <strong>Коментарий:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Удалить коментарий', [comment.post, comment],
+              method: :delete,
+              data: { confirm: "Удалить?" } %>
+</p>
