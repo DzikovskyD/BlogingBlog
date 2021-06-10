@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_114348) do
+ActiveRecord::Schema.define(version: 2021_06_10_130250) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -67,8 +67,10 @@ ActiveRecord::Schema.define(version: 2021_06_10_114348) do
     t.string "login"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "mailing_schedule", default: "weekly"
+    t.integer "schedule_values_id", default: 1
+    t.index ["schedule_values_id"], name: "index_users_on_schedule_values_id"
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "users", "schedule_values", column: "schedule_values_id"
 end
