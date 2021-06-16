@@ -19,7 +19,8 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.login %></td>
-        <td><%= user.mailing_schedule %></td>
+        <td><%= user.mailing_schedule(user.id) %></td>
+
         <td><%= link_to 'Показать', user %></td>
         <td><%= link_to 'Редактировать', edit_user_path(user) %></td>
         <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>

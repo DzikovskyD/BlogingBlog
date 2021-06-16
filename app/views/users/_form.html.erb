@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :Подписка %>
-    <%= form.collection_select :id, ScheduleValue.all, :id, :value %>
+    <%= form.collection_select :schedule_values_id, ScheduleValue.all, :id, :value %>
   </div>
 
   <div class="actions">
