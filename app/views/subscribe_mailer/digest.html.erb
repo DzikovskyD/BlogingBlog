@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @user.name %>, Ваш Дайджест прибыл! </h1>
+    <p>
+              Здравствуйте <%= @user.name %>!
+      <br>
+      ===============================================
+      <br>
+      <% @posts.each do |post| %>
+      <%= link_to post.title, post %>
+      <br>
+      <% end %>
+      <br>
+    </p>
+    <p>
+      Спасибо что выбрали BlogingBlog! <%= @url %>.
+    </p>
+  </body>
+</html>
